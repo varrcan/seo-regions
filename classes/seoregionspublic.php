@@ -2,9 +2,6 @@
 
 namespace Varrcan\SeoRegions;
 
-use function explode;
-use function parse_url;
-
 if (!\defined('ABSPATH')) {
     die;
 }
@@ -28,10 +25,6 @@ class SeoRegionsPublic
 
     /**
      * SeoRegionsPublic constructor.
-     *
-     * @param $pluginName
-     * @param $version
-     * @param $host
      */
     public function __construct()
     {
@@ -52,11 +45,6 @@ class SeoRegionsPublic
             $this->domainRedirect(self::$httpHost);
             $this->setHooks();
         }
-
-        if (!is_admin()) {
-            //echo __FILE__ . ' @ ' . __LINE__ . '<pre>' . print_r(self::$httpHost, true) . '</pre>';
-            //exit();
-        }
     }
 
     /**
@@ -66,7 +54,9 @@ class SeoRegionsPublic
      */
     private function domainRedirect($domain)
     {
-        if ($this->options['redirect'] && self::getSubDomain($domain) !== self::$domainRules['domain_code']) {
+        if ($this->options['redirect'] &&
+            $this->options['domain_not_subdomain'] &&
+            self::getSubDomain($domain) !== self::$domainRules['domain_code']) {
             wp_redirect((is_ssl() ? 'https://' : 'http://') . self::$originalHost, 301);
             exit;
         }

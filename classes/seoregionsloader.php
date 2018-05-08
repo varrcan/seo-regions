@@ -7,13 +7,14 @@ if (!\defined('ABSPATH')) {
 }
 
 /**
- * Class SeoRegionsLoader
+ * Trait SeoRegionsLoader
  * @package Varrcan\SeoRegions
  */
 trait SeoRegionsLoader
 {
-    protected $actions = [];
-    protected $filters = [];
+    protected $actions   = [];
+    protected $filters   = [];
+    protected $shortcode = [];
 
     /**
      * Хуки
@@ -41,6 +42,18 @@ trait SeoRegionsLoader
     public function addFilter($hook, $component, $callback, $priority = 10, $args = 1)
     {
         $this->filters = $this->add($this->filters, $hook, $component, $callback, $priority, $args);
+    }
+
+    /**
+     * Шорткоды
+     *
+     * @param     $tag
+     * @param     $component
+     * @param     $callback
+     */
+    public function addShortcode($tag, $component, $callback)
+    {
+        $this->shortcode = $this->add($this->shortcode, $tag, $component, $callback, $priority = '', $args = '');
     }
 
     /**
@@ -80,6 +93,10 @@ trait SeoRegionsLoader
 
         foreach ($this->actions as $hook) {
             add_action($hook['hook'], [$hook['component'], $hook['callback']], $hook['priority'], $hook['args']);
+        }
+
+        foreach ($this->shortcode as $hook) {
+            add_shortcode($hook['hook'], [$hook['component'], $hook['callback']]);
         }
     }
 }

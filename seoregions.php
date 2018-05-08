@@ -4,14 +4,14 @@
  * Bootstrap file
  *
  * @link              https://varrcan.me
- * @since             1.0.0
+ * @since             1.1.0
  * @package           SeoRegions
  * @wordpress-plugin
  *
  * Plugin Name:       WordPress SeoRegions
  * Plugin URI:        https://github.com/varrcan/seo-regions
  * Description:       Продвижение проекта в региональных выдачах поисковых систем на основе поддоменов сайта. Основные возможности плагина: Замена мета тегов, текстов, тайтлов, заголовков, на страницах разных подоменов с помощью комплексных правил; возможноть подтверждения каждого поддомена в сервисах вебмастеров через мета тег; возможность использовать отличный от корневого домен, вместо поддоменов.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            Sergey Voloshin
  * Author URI:        https://varrcan.me
  * License:           GPL-2.0+
@@ -27,7 +27,7 @@ if (!\defined('ABSPATH')) {
 }
 
 \define('NOBLOGREDIRECT', (is_ssl() ? 'https://' : 'http://') . $_SERVER['HTTP_HOST']);
-\define('SEO_REGIONS_VERSION', '1.0.0');
+\define('SEO_REGIONS_VERSION', '1.1.0');
 \define('SEO_REGIONS_FILE', __FILE__);
 \define('SEO_REGIONS_DIR', plugin_dir_path(SEO_REGIONS_FILE));
 \define('SEO_REGIONS_URL', plugin_dir_url(SEO_REGIONS_FILE));
@@ -120,6 +120,7 @@ class SeoRegions
         require_once SEO_REGIONS_DIR . 'classes/seoregionsloader.php';
         require_once SEO_REGIONS_DIR . 'classes/seoregionsi18n.php';
         require_once SEO_REGIONS_DIR . 'classes/seoregionspublic.php';
+        require_once SEO_REGIONS_DIR . 'classes/seoregionsshortcode.php';
 
         if (is_admin()) {
             require_once SEO_REGIONS_DIR . 'classes/seoregionsadmin.php';

@@ -1,0 +1,100 @@
+.seoregions-wrap {
+    position: relative;
+    padding: 0 20px 0 0;
+}
+
+.seoregions-wrap span {
+    color: #0b457d;
+    /*font-size: 12px;*/
+}
+
+.seoregions {
+    position: relative;
+    display: inline-block !important;
+}
+
+span.seoregions:before {
+    display: none;
+}
+
+.seoregions .seoregions__hidden.active {
+    opacity: 1;
+    z-index: 1000;
+}
+
+.seoregions__active {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dashed transparent;
+    transition: border 0.3s ease;
+    cursor: pointer;
+    /*font-size: 12px;*/
+}
+
+.seoregions.active .seoregions__active:before {
+    transform: rotate(-180deg)
+}
+
+.seoregions__active:before {
+    position: absolute;
+    content: '';
+    right: -20px;
+    color: #0b457d;
+    font-size: 16px;
+    font-weight: bold;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAAPklEQVQImW3KQREAIAwDwXPYYgILdUMM4QkeDDNQyDO34OqYgjxT4OrgrVI0LmQKigbe6jpO9MS9jb7xRClOLGMiDwC+jccAAAAASUVORK5CYII=') no-repeat 50% 50%;
+    height: 5px;
+    width: 11px;
+    top: calc(50% - 2.5px);
+    transition: transform 0.3s ease;
+}
+
+.seoregions__active:hover {
+    border-bottom: 1px dashed #0b457d;
+}
+
+.seoregions__hidden {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    top: 120%;
+    width: 170px;
+    background: #fff;
+    z-index: -1;
+    border: 1px solid #e2e5e6;
+    max-height: 250px;
+    overflow-y: scroll !important;
+    transition: opacity 0.3s ease;
+
+}
+
+.seoregions__hidden-item {
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+    transition: background 0.3s ease;
+    padding: 7px 10px;
+    line-height: 100%;
+    white-space: normal;
+    display: block;
+    text-align: left !important;
+}
+
+.seoregions__hidden-item:hover {
+    background-color: #e2e5e6;
+
+}
+
+.seoregions__hidden-link {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+}
+
+.seoregions__hidden-link:hover {
+    text-decoration: none;
+}
+
+.select {
+    white-space: nowrap;
+}

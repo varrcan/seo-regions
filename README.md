@@ -5,6 +5,7 @@
 **Requires at least:** 3.8  
 **Tested up to:** 4.9.5  
 **Stable tag:** trunc  
+**Requires PHP:** 7.0  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,7 +19,8 @@
 * возможность использовать отличный от корневого домен, вместо поддоменов.
 
 ### Требования ###
-* PHP7 и выше
+* PHP7 и выше  
+* Wordpress должен быть установлен в корневую директорию сайта
 
 ## Screenshots ##
 
@@ -31,6 +33,9 @@
 
 
 ## Changelog ##
+
+### 1.1.0 (08.05.2018) ###
+* Fix domain redirect & add shortcode (view menu domains)
 
 ### 1.0.0 (07.05.2018) ###
 * Beta version
