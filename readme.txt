@@ -37,6 +37,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+### 1.2.1 (11.05.2018) ###
+* Fix style & script
+
 ### 1.2.0 (11.05.2018) ###
 * Add widget
 

@@ -34,6 +34,9 @@
 
 ## Changelog ##
 
+### 1.2.1 (11.05.2018) ###
+* Fix style & script
+
 ### 1.2.0 (11.05.2018) ###
 * Add widget
 

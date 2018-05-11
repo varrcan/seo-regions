@@ -22,12 +22,20 @@ class SeoRegionsPublic
     private static $wpQuery;
 
     private $options;
+    private $pluginName;
+    private $version;
 
     /**
      * SeoRegionsPublic constructor.
+     *
+     * @param $pluginName
+     * @param $version
      */
-    public function __construct()
+    public function __construct($pluginName, $version)
     {
+        $this->pluginName = $pluginName;
+        $this->version    = $version;
+
         $this->options = get_option('seoregions_option');
 
         // Домен, указанный в настройках сайта. После объявления константы WP_SITEURL значение переопределится
@@ -274,6 +282,22 @@ class SeoRegionsPublic
         $siteUrl = (is_ssl() ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $arUrl['path'];
 
         return $siteUrl;
+    }
+
+    /**
+     * Добавление стилей для шорткодов
+     */
+    public function enqueueShortcodeStyle()
+    {
+        wp_enqueue_style($this->pluginName, SEO_REGIONS_URL . 'public/css/seo-regions.css', [], $this->version);
+    }
+
+    /**
+     * Добавление скрипта для шорткодов
+     */
+    public function enqueueShortcodeScript()
+    {
+        wp_enqueue_script($this->pluginName, SEO_REGIONS_URL . 'public/js/seo-regions.js', ['jquery'], $this->version, true);
     }
 
     /**

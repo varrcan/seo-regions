@@ -24,7 +24,7 @@ class SeoRegionsAdmin
      */
     public function __construct($pluginName, $version)
     {
-        $this->pluginName = $pluginName;
+        $this->pluginName = $pluginName . '-admin';
         $this->version    = $version;
         $this->pageView   = new SeoRegionsView();
     }
