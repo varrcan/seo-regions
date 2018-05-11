@@ -44,16 +44,19 @@ class SeoRegionsInit
      */
     private function loadPublicHooks()
     {
-        $pluginPublic    = new SeoRegionsPublic();
-        $pluginShortcode = new SeoRegionsShortcode($this->pluginName, SEO_REGIONS_VERSION);
+        $pluginPublic    = new SeoRegionsPublic($this->pluginName, SEO_REGIONS_VERSION);
+        $pluginShortcode = new SeoRegionsShortcode();
+        $pluginWidget    = new SeoRegionsWidget();
 
         $this->addAction('get_header', $pluginPublic, 'bufferStart');
         $this->addAction('wp_footer', $pluginPublic, 'bufferEnd');
         $this->addAction('wp_head', $pluginPublic, 'verificationCodes');
 
-        $this->addAction('wp_enqueue_scripts', $pluginShortcode, 'enqueueShortcodeStyle');
-        $this->addAction('wp_enqueue_scripts', $pluginShortcode, 'enqueueShortcodeScript');
+        $this->addAction('wp_enqueue_scripts', $pluginPublic, 'enqueueShortcodeStyle');
+        $this->addAction('wp_enqueue_scripts', $pluginPublic, 'enqueueShortcodeScript');
+
         $this->addShortcode('seo-domains', $pluginShortcode, 'outputDomainsMenu');
+        $this->addAction('widgets_init', $pluginWidget, 'registerWidget');
     }
 
     /**

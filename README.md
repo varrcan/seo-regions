@@ -34,6 +34,9 @@
 
 ## Changelog ##
 
+### 1.2.0 (11.05.2018) ###
+* Add widget
+
 ### 1.1.0 (08.05.2018) ###
 * Fix domain redirect & add shortcode (view menu domains)
 
