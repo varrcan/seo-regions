@@ -4,14 +4,14 @@
  * Bootstrap file
  *
  * @link              https://varrcan.me
- * @since             1.2.2
+ * @since             1.2.3
  * @package           SeoRegions
  * @wordpress-plugin
  *
  * Plugin Name:       WordPress SeoRegions
  * Plugin URI:        https://github.com/varrcan/seo-regions
  * Description:       Продвижение проекта в региональных выдачах поисковых систем на основе поддоменов сайта. Основные возможности плагина: Замена мета тегов, текстов, тайтлов, заголовков, на страницах разных подоменов; возможность подтверждения каждого поддомена в сервисах вебмастеров через мета тег; возможность использовать отличный от корневого домен, вместо поддоменов.
- * Version:           1.2.2
+ * Version:           1.2.3
  * Author:            Sergey Voloshin
  * Author URI:        https://varrcan.me
  * License:           GPL-2.0+

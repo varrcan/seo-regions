@@ -34,6 +34,9 @@
 
 ## Changelog ##
 
+### 1.2.3 (13.05.2018) ###
+* Small fix
+
 ### 1.2.2 (13.05.2018) ###
 * Style SASS
 * One widget and shortcode template
