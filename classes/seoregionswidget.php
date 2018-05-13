@@ -40,9 +40,9 @@ class SeoRegionsWidget extends \WP_Widget
         $title = $instance['title'] ?? 'Ваш город:';
 
         $options = [
-            '1' => 'Список',
-            '2' => 'Выпадающее меню',
-            '3' => 'Модальное окно',
+            'list'   => 'Список',
+            'select' => 'Выпадающее меню',
+            'modal'  => 'Модальное окно',
         ];
 
         $titleId     = $this->get_field_id('title');
@@ -72,26 +72,7 @@ class SeoRegionsWidget extends \WP_Widget
         if (SeoRegionsPublic::getDomainName()) {
             $arResult = SeoRegionsPublic::getAllDomainsData();
 
-            $out = '<div class="select seoregions-wrap">' . PHP_EOL;
-            $out .= '<span>' . $instance['title'] . '</span>' . PHP_EOL;
-            $out .= '<span class="seoregions">' . PHP_EOL;
-            $out .= '<span class="seoregions__active">' . SeoRegionsPublic::getDomainName() . '</span>' . PHP_EOL;
-            $out .= '<span class="seoregions__hidden">' . PHP_EOL;
-
-            foreach ($arResult as $arItem) {
-                $out .=
-                    '<span class="seoregions__hidden-item">
-                    <a href="' . $arItem['domain_url'] . $_SERVER['REQUEST_URI'] . '" 
-                        class="seoregions__hidden-link seoregions-href">' . $arItem['domain_city'] . '
-                    </a>
-                </span>' . PHP_EOL;
-            }
-
-            $out .= '</span>' . PHP_EOL;
-            $out .= '</span>' . PHP_EOL;
-            $out .= '</div>' . PHP_EOL;
-
-            echo $out;
+            include SEO_REGIONS_DIR . 'public/output/select.php';
         }
     }
 
@@ -107,7 +88,7 @@ class SeoRegionsWidget extends \WP_Widget
     {
         $values            = [];
         $values['title']   = htmlentities($newInstance['title']);
-        $values['options'] = (int)$newInstance['options'];
+        $values['options'] = htmlentities($newInstance['options']);
 
         return $values;
     }

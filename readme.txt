@@ -37,13 +37,17 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
-### 1.2.1 (11.05.2018) ###
+= 1.2.2 (13.05.2018) =
+* Style SASS
+* One widget and shortcode template
+
+= 1.2.1 (11.05.2018) =
 * Fix style & script
 
-### 1.2.0 (11.05.2018) ###
+= 1.2.0 (11.05.2018) =
 * Add widget
 
-### 1.1.0 (08.05.2018) ###
+= 1.1.0 (08.05.2018) =
 * Fix domain redirect & add shortcode (view menu domains)
 
 = 1.0.0 (07.05.2018) =

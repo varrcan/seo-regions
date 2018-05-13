@@ -35,8 +35,7 @@ class SeoRegionsPublic
     {
         $this->pluginName = $pluginName;
         $this->version    = $version;
-
-        $this->options = get_option('seoregions_option');
+        $this->options    = get_option('seoregions_option');
 
         // Домен, указанный в настройках сайта. После объявления константы WP_SITEURL значение переопределится
         self::$originalHost = parse_url(site_url(), PHP_URL_HOST);
@@ -118,8 +117,8 @@ class SeoRegionsPublic
      */
     public static function getAllDomainsData():array
     {
-        $host      = '';
-        $objQuery  = self::getQuery([
+        $host     = '';
+        $objQuery = self::getQuery([
             'post_type'   => 'domain',
             'post_status' => 'publish',
             'orderby'     => 'title',
@@ -260,8 +259,8 @@ class SeoRegionsPublic
 
     private function setHooks()
     {
-        $this->addFilter('template_directory_uri', $this, 'setMainDomain', 1);
-        $this->addFilter('plugins_url', $this, 'setMainDomain', 1);
+        $this->addFilter('template_directory_uri', $this, 'setMainDomain', 99);
+        $this->addFilter('plugins_url', $this, 'setMainDomain', 99);
 
         $this->run();
     }
@@ -285,7 +284,7 @@ class SeoRegionsPublic
     }
 
     /**
-     * Добавление стилей для шорткодов
+     * Добавление стилей
      */
     public function enqueueShortcodeStyle()
     {
@@ -293,7 +292,7 @@ class SeoRegionsPublic
     }
 
     /**
-     * Добавление скрипта для шорткодов
+     * Добавление скриптов
      */
     public function enqueueShortcodeScript()
     {

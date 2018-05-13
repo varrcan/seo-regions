@@ -1,0 +1,77 @@
+$base-color: #0b457d
+
+.seoregions
+    position: relative
+    white-space: nowrap
+
+    span
+        color: $base-color
+
+    &__wrap
+        position: relative
+        display: inline-block
+
+    &__active
+        position: relative
+        display: inline-block
+        border-bottom: 1px dashed transparent
+        transition: border 0.3s ease
+        cursor: pointer
+
+        &__active:before
+            transform: rotate(-180deg)
+
+    &__active:before
+        position: absolute
+        content: ''
+        right: -20px
+        color: $base-color
+        font-size: 16px
+        font-weight: bold
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAAPklEQVQImW3KQREAIAwDwXPYYgILdUMM4QkeDDNQyDO34OqYgjxT4OrgrVI0LmQKigbe6jpO9MS9jb7xRClOLGMiDwC+jccAAAAASUVORK5CYII=') no-repeat 50% 50%
+        height: 5px
+        width: 11px
+        top: calc(50% - 2.5px)
+        transition: transform 0.3s ease
+
+    &__active:hover
+        border-bottom: 1px dashed $base-color
+
+    &__hidden
+        position: absolute
+        left: 0
+        opacity: 0
+        top: 120%
+        width: 170px
+        background: #fff
+        z-index: -1
+        border: 1px solid #e2e5e6
+        max-height: 250px
+        overflow-y: scroll
+        transition: opacity 0.3s ease
+
+    &__hidden-active
+        opacity: 1
+        z-index: 1000
+
+    &__hidden-item
+        position: relative
+        width: 100%
+        background-color: transparent
+        transition: background 0.3s ease
+        padding: 7px 10px
+        line-height: 100%
+        white-space: normal
+        display: block
+        text-align: left
+
+    &__hidden-item:hover
+        background-color: #e2e5e6
+
+    &__hidden-link
+        display: block
+        width: 100%
+        text-decoration: none
+
+    &__hidden-link:hover
+        text-decoration: none
