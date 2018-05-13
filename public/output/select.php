@@ -21,7 +21,7 @@ $title = $instance['title'] ?? 'Ваш город:';
             <?php foreach ((array)$arResult as $arItem) : ?>
                 <span class="seoregions__hidden-item">
                     <a href="<?=$arItem['domain_url'] . $_SERVER['REQUEST_URI'];?>"
-                       class="seoregions__hidden-link seoregions-href"><?=$arItem['domain_city'];?>
+                       class="seoregions__hidden-link"><?=$arItem['domain_city'];?>
                     </a>
                 </span>
             <?php endforeach; ?>
