@@ -1,7 +1,7 @@
 === WordPress SeoRegions ===
 Contributors: Varrcan
 Donate link: https://money.yandex.ru/to/410011517897625
-Tags: subdomain, seo
+Tags: wordpress-plugin, seotools, seo-regions, subdomain
 Requires at least: 4.0
 Tested up to: 4.9.5
 Stable tag: trunc

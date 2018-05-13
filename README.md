@@ -1,7 +1,7 @@
 # WordPress SeoRegions #
 
 **Contributors:** Varrcan  
-**Tags:** subdomain, seo  
+**Tags:** wordpress-plugin, seotools, seo-regions, subdomain  
 **Requires at least:** 3.8  
 **Tested up to:** 4.9.5  
 **Stable tag:** trunc  
