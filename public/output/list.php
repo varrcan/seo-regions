@@ -2,29 +2,28 @@
 
 namespace Varrcan\SeoRegions;
 
+use Varrcan\SeoRegions\SeoRegionsPublic;
+
 if (!\defined('ABSPATH')) {
     die;
 }
 
 /** @var SeoRegionsWidget $instance */
-$title = $instance['title'] === '' ? 'Ваш город:' : $instance['title'];
+$title = $instance['title'] === '' ? 'Офисы в других городах:' : $instance['title'];
 
 ?>
 
 <div class="seoregions">
     <span><?=$title;?></span>
-    <div class="seoregions__wrap">
-        <span class="seoregions__active"><?=SeoRegionsPublic::getDomainName();?></span>
-        <span class="seoregions__hidden">
+    <div class="seoregions__list">
         <?php if (isset($arResult)) : ?>
             <?php foreach ((array)$arResult as $arItem) : ?>
-                <span class="seoregions__hidden-item">
+                <?php if ($arItem['domain_city'] !== SeoRegionsPublic::getDomainName()) : ?>
                     <a href="<?=$arItem['domain_url'] . $_SERVER['REQUEST_URI'];?>"
-                       class="seoregions__hidden-link"><?=$arItem['domain_city'];?>
+                       class="seoregions__list-item"><?=$arItem['domain_city'];?>
                     </a>
-                </span>
+                <?php endif; ?>
             <?php endforeach; ?>
         <?php endif; ?>
-        </span>
     </div>
 </div>

@@ -72,7 +72,17 @@ class SeoRegionsWidget extends \WP_Widget
         if (SeoRegionsPublic::getDomainName()) {
             $arResult = SeoRegionsPublic::getAllDomainsData();
 
-            include SEO_REGIONS_DIR . 'public/output/select.php';
+            switch ($instance['options']) {
+                case 'list':
+                    include SEO_REGIONS_DIR . 'public/output/list.php';
+                    break;
+                case 'select':
+                    include SEO_REGIONS_DIR . 'public/output/select.php';
+                    break;
+                case 'modal':
+                    include SEO_REGIONS_DIR . 'public/output/modal.php';
+                    break;
+            }
         }
     }
 

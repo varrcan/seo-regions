@@ -21,21 +21,21 @@ $base-color: #0b457d
         &__active:before
             transform: rotate(-180deg)
 
-    &__active:before
-        position: absolute
-        content: ''
-        right: -20px
-        color: $base-color
-        font-size: 16px
-        font-weight: bold
-        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAAPklEQVQImW3KQREAIAwDwXPYYgILdUMM4QkeDDNQyDO34OqYgjxT4OrgrVI0LmQKigbe6jpO9MS9jb7xRClOLGMiDwC+jccAAAAASUVORK5CYII=') no-repeat 50% 50%
-        height: 5px
-        width: 11px
-        top: calc(50% - 2.5px)
-        transition: transform 0.3s ease
+        &:before
+            position: absolute
+            content: ''
+            right: -20px
+            color: $base-color
+            font-size: 16px
+            font-weight: bold
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAAPklEQVQImW3KQREAIAwDwXPYYgILdUMM4QkeDDNQyDO34OqYgjxT4OrgrVI0LmQKigbe6jpO9MS9jb7xRClOLGMiDwC+jccAAAAASUVORK5CYII=') no-repeat 50% 50%
+            height: 5px
+            width: 11px
+            top: calc(50% - 2.5px)
+            transition: transform 0.3s ease
 
-    &__active:hover
-        border-bottom: 1px dashed $base-color
+        &:hover
+            border-bottom: 1px dashed $base-color
 
     &__hidden
         position: absolute
@@ -50,28 +50,41 @@ $base-color: #0b457d
         overflow-y: scroll
         transition: opacity 0.3s ease
 
-    &__hidden-active
-        opacity: 1
-        z-index: 1000
+        &-active
+            opacity: 1
+            z-index: 1000
 
-    &__hidden-item
-        position: relative
-        width: 100%
-        background-color: transparent
-        transition: background 0.3s ease
-        padding: 7px 10px
-        line-height: 100%
-        white-space: normal
-        display: block
-        text-align: left
+        &-item
+            position: relative
+            width: 100%
+            background-color: transparent
+            transition: background 0.3s ease
+            padding: 7px 10px
+            line-height: 100%
+            white-space: normal
+            display: block
+            text-align: left
 
-    &__hidden-item:hover
-        background-color: #e2e5e6
+            &:hover
+                background-color: #e2e5e6
 
-    &__hidden-link
-        display: block
-        width: 100%
-        text-decoration: none
+        &-link
+            display: block
+            width: 100%
+            text-decoration: none
 
-    &__hidden-link:hover
-        text-decoration: none
+            &:hover
+                text-decoration: none
+
+    &__list
+        display: flex
+        flex-wrap: wrap
+
+        &-item
+            flex-basis: 100%
+            max-width: 100%
+            display: flex
+            flex-direction: column
+            text-decoration: none
+            letter-spacing: 0.01em
+            font-weight: 700
