@@ -3,7 +3,7 @@
 **Contributors:** Varrcan  
 **Tags:** wordpress-plugin, seotools, seo-regions, subdomain  
 **Requires at least:** 3.8  
-**Tested up to:** 4.9.5  
+**Tested up to:** 4.9.6  
 **Stable tag:** trunc  
 **Requires PHP:** 7.0  
 **License:** GPLv2 or later  
