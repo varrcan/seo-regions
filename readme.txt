@@ -3,7 +3,7 @@ Contributors: Varrcan
 Donate link: https://money.yandex.ru/to/410011517897625
 Tags: wordpress-plugin, seotools, seo-regions, subdomain
 Requires at least: 4.0
-Tested up to: 4.9.5
+Tested up to: 4.9.6
 Stable tag: trunc
 Requires PHP: 7.0
 License: GPLv2 or later
@@ -36,6 +36,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 3. Plugin settings
 
 == Changelog ==
+
+= 1.2.4 (02.06.2018) =
+* Add widget list
 
 = 1.2.3 (13.05.2018) =
 * Small fix
